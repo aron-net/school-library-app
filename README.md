@@ -2,55 +2,28 @@
 
 # Project Name
 
-> Description the project.
-
-
-## Built With
-
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
+> School Library
 
 ## Getting Started
+For a complete list of ways to install Ruby, including using third-party tools like rvm, see:
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+https://www.ruby-lang.org/en/downloads/
 
+The mirror of the Ruby source tree can be checked out with the following command:
 
-To get a local copy up and running follow these simple example steps.
+$ git clone https://github.com/ruby/ruby.git
 
-### Prerequisites
+There are some other branches under development. Try the following command to see the list of branches:
 
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+$ git ls-remote https://github.com/ruby/ruby.git
 
 ## Authors
 
-👤 **Author1**
+👤 **Aaron Abraham**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Aaron](https://github.com/aron-helu)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- LinkedIn: [@Aaron](https://www.linkedin.com/in/aron-abraham-90a4321b0/)
 
 ## 🤝 Contributing
 
@@ -68,6 +41,4 @@ Give a ⭐️ if you like this project!
 - Inspiration
 - etc
 
-## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
