@@ -8,6 +8,7 @@ class Person < Nameable
   attr_reader :id
 
   def initialize(age, name = 'Unknown', parent_permission: true)
+    super()
     @id = SecureRandom.uuid
     @name = name
     @age = age
@@ -21,7 +22,7 @@ class Person < Nameable
   def correct_name
     @name
   end
-  
+
   private
 
   def of_age?
@@ -30,8 +31,8 @@ class Person < Nameable
 end
 
 person = Person.new(22, 'maximilianus')
-  puts person.correct_name
-  capitalized_person = CapitalizaDecorator.new(person)
-    puts capitalized_person.correct_name
-  capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-    puts capitalized_trimmed_person.correct_name
+puts person.correct_name
+capitalized_person = CapitalizaDecorator.new(person)
+puts capitalized_person.correct_name
+capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+puts capitalized_trimmed_person.correct_name
