@@ -19,7 +19,7 @@ class Person < Nameable
   def rentals_list(rental)
     rental.person = self
   end
-  
+
   def can_use_services?
     is_of_age || parent_permission ? true : false
   end
