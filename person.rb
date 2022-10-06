@@ -4,7 +4,7 @@ require './trimmer'
 require './capitalize'
 
 class Person < Nameable
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rentals
   attr_reader :id
 
   def initialize(age, name = 'Unknown', parent_permission: true)
@@ -13,6 +13,11 @@ class Person < Nameable
     @name = name
     @age = age
     @parent_permit = parent_permission
+    @rentals = []
+  end
+
+  def rentals_list(rental)
+    rental.person = self
   end
 
   def can_use_services?
