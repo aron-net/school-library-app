@@ -5,8 +5,6 @@ class Rental
     @date = date
     @person = person
     @book = book
-    book.rentals_list.push(self)
-    person.rentals_list.push(self)
   end
 
   def add_person(person)
