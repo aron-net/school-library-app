@@ -40,7 +40,7 @@ class App
     case input
     when '1'
       list_all_books
-    when '2'
+    when 2
       list_all_people
     when '3'
       create_person
@@ -107,7 +107,7 @@ class App
 
   def create_teacher
     print 'Age: '
-    age = gets.chomp.to_i
+    age = gets.chomp
 
     print 'Name: '
     name = gets.chomp
