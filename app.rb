@@ -37,7 +37,6 @@ class App
   end
 
   def options(input)
-    
     case input
     when '1'
       list_all_books
