@@ -4,7 +4,7 @@ require './teacher'
 require './classroom'
 require './book'
 require './rental'
-
+require 'pry'
 # rubocop:disable Metrics
 
 class App
@@ -37,10 +37,11 @@ class App
   end
 
   def options(input)
+    
     case input
     when '1'
       list_all_books
-    when 2
+    when '2'
       list_all_people
     when '3'
       create_person
