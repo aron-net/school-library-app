@@ -4,7 +4,7 @@ require './teacher'
 require './classroom'
 require './book'
 require './rental'
-
+require 'pry'
 # rubocop:disable Metrics
 
 class App
@@ -107,7 +107,7 @@ class App
 
   def create_teacher
     print 'Age: '
-    age = gets.chomp.to_i
+    age = gets.chomp
 
     print 'Name: '
     name = gets.chomp
