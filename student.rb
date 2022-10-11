@@ -10,12 +10,20 @@ class Student < Person
     @classroom = classroom
   end
 
-  def class(classroom)
-    @classroom = classroom
-    classroom.students_list.push(self) unless classroom.students_list.include?(self)
-  end
-
   def play_hooky
     "¯\(ツ)/¯"
+  end
+
+  def self.create_student
+    print 'Age: '
+    age = gets.chomp.to_i
+
+    print 'Name: '
+    name = gets.chomp
+
+    print 'Has parent permission? [Y/N]: '
+    parent_permission = gets.chomp
+
+    Student.new(nil, age, name, parent_permission: parent_permission == 'Y')
   end
 end
