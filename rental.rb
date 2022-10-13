@@ -17,7 +17,7 @@ class Rental
     book.rentals_list.push(self) unless book.rentals_list.include?(self)
   end
 
-  def self.create_rental_check(books, _people)
+  def self.create_rental_check(books, people)
     index_book = nil
     index_person = nil
     until (0..books.length - 1).include? index_book
@@ -25,9 +25,14 @@ class Rental
       Book.list_all_books(books)
       index_book = gets.chomp.to_i
     end
+    until (0..people.length - 1).include? index_person
+      puts 'Select a person from the following list by number (not id)'
+      Person.list_all_people(people)
+      index_person = gets.chomp.to_i
+    end
     print 'Date: '
     date = gets.chomp
-    Rental.new(date, person[index_person], books[index_book])
+    Rental.new(date, people[index_person], books[index_book])
   end
 
   def self.create_rental(books, people, rentals)
@@ -54,8 +59,8 @@ class Rental
       puts "Person #{id}: #{person.name} doesn't have rentals"
     else
       puts 'Rentals:'
-      person.rentals.each do |rental|
-        puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
+      rentals.each do |rental|
+        puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}" if rental.person.id == id
       end
     end
   end

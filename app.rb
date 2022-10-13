@@ -35,11 +35,14 @@ class App
 
   def save_files
     FileHandler.write_book(@books)
+    FileHandler.write_person(@people)
+    FileHandler.write_rentals(@rentals)
   end
 
   def run
     FileHandler.read_book(@books)
     FileHandler.read_person(@people)
+    FileHandler.read_rentals
     user_choice = 0
     menu = Select.new
     print 'Welcome To School Library App'
