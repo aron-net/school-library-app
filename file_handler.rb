@@ -22,4 +22,24 @@ class FileHandler
     end
     File.write(path_file, JSON.pretty_generate(data_books))
   end
+
+  def self.read_person(people)
+    path = "#{SAVE_DATA}person.json"
+    return unless File.exist?(path)
+
+    people_file = File.open(path)
+    JSON.parse(people_file.read).each do |person|
+      if person['class'] == 'Student'
+        new_student = Student.new(person['classroom'], person['age'], person['name'], person['parent_permission'])
+        new_student.id = person['id']
+        people << new_student
+      else
+        new_teacher = Teacher.new(person['specialization'], person['age'], person['name'],
+                                  person['parent_permission'])
+        new_teacher.id = person['id']
+        people << new_teacher
+      end
+    end
+    people_file.close
+  end
 end

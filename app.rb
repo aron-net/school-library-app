@@ -39,6 +39,7 @@ class App
 
   def run
     FileHandler.read_book(@books)
+    FileHandler.read_person(@people)
     user_choice = 0
     menu = Select.new
     print 'Welcome To School Library App'
