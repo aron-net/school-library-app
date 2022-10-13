@@ -1,10 +1,11 @@
 require './person'
 
 class Teacher < Person
-  attr_accessor :specialization
+  attr_accessor :specialization, :id
+  attr_reader :parent_permission
 
-  def initialize(age, specialization, name = 'Unknown', parent_permission: true)
-    super(age, name, parent_permission: parent_permission)
+  def initialize(specialization, *args)
+    super(*args)
     @specialization = specialization
   end
 
@@ -22,6 +23,6 @@ class Teacher < Person
     print 'Specialization: '
     specialization = gets.chomp
 
-    Teacher.new(specialization, age, name)
+    Teacher.new(specialization, age, name, parent_permission: true)
   end
 end

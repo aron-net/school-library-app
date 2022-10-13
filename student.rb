@@ -3,10 +3,10 @@ require_relative './person'
 # implement the student class
 
 class Student < Person
-  attr_accessor :classroom
+  attr_accessor :classroom, :id, :parent_permission
 
-  def initialize(age, classroom, name = 'Unknown', parent_permission: true)
-    super(age, name, parent_permission: parent_permission)
+  def initialize(classroom, *args)
+    super(*args)
     @classroom = classroom
   end
 
@@ -15,6 +15,9 @@ class Student < Person
   end
 
   def self.create_student
+    print 'Classroom: '
+    classroom = gets.chomp
+
     print 'Age: '
     age = gets.chomp.to_i
 
@@ -22,8 +25,14 @@ class Student < Person
     name = gets.chomp
 
     print 'Has parent permission? [Y/N]: '
-    parent_permission = gets.chomp
+    parent_permission_user = gets.chomp
+    has_permission = case parent_permission_user.downcase
+                     when 'y'
+                       true
+                     else
+                       false
+                     end
 
-    Student.new(nil, age, name, parent_permission: parent_permission == 'Y')
+    Student.new(classroom, age, name, parent_permission: has_permission)
   end
 end

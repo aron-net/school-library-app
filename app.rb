@@ -5,7 +5,7 @@ require './classroom'
 require './book'
 require './rental'
 require './refactor'
-
+require './file_handler'
 # rubocop:disable Metrics
 
 class App
@@ -25,13 +25,24 @@ class App
     when 4 then Book.create_book(@books)
     when 5 then Rental.create_rental(@books, @people, @rentals)
     when 6 then Rental.list_all_rentals_for_id(@people, @rentals)
-    when 7 then puts 'Thank you for using this app!'
+    when 7
+      puts 'Thank you for using this app!'
+      save_files
     else
       puts 'Please enter a number between 1 and 7'
     end
   end
 
+  def save_files
+    FileHandler.write_book(@books)
+    FileHandler.write_person(@people)
+    FileHandler.write_rentals(@rentals)
+  end
+
   def run
+    FileHandler.read_book(@books)
+    FileHandler.read_person(@people)
+    FileHandler.read_rentals
     user_choice = 0
     menu = Select.new
     print 'Welcome To School Library App'

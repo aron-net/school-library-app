@@ -1,7 +1,10 @@
-class Book
-  attr_accessor :title, :author, :rentals_list
+require 'securerandom'
 
-  def initialize(title, author)
+class Book
+  attr_accessor :title, :author, :rentals_list, :id
+
+  def initialize(title, author, id = nil)
+    @id = id || SecureRandom.random_number(1000)
     @title = title
     @author = author
     @rentals_list = []
@@ -15,7 +18,9 @@ class Book
     if books.empty?
       puts 'There are no books yet! Kindly add books.'
     else
-      books.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
+      books.each_with_index do |book, index|
+        puts "#{index} ) Title: #{book.title}, Author: #{book.author}"
+      end
     end
   end
 

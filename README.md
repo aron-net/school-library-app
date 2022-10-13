@@ -25,6 +25,12 @@ $ git ls-remote https://github.com/ruby/ruby.git
 
 - LinkedIn: [@Aaron](https://www.linkedin.com/in/aron-abraham-90a4321b0/)
 
+👤 **Apuabi Titilope**
+
+- GitHub: [@Eternalgratis](https://github.com/Eternalgratis)
+
+- LinkedIn: [Apuabi Titilope](https://www.linkedin.com/in/titilope-apuabi/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
