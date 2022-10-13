@@ -42,6 +42,7 @@ class FileHandler
     end
     people_file.close
   end
+
   def self.write_person(people)
     return if people.empty?
 
@@ -59,6 +60,7 @@ class FileHandler
     end
     File.write(path_file, JSON.pretty_generate(people_data_array))
   end
+
   def self.write_rentals(rentals)
     rentals_data_array = []
     rentals.each do |rental|
@@ -74,6 +76,7 @@ class FileHandler
     end
     File.write('./SAVE_DATA/rental.json', JSON.pretty_generate(rentals_data_array))
   end
+
   # read rentals
   def self.read_rentals
     array_rentals = []
