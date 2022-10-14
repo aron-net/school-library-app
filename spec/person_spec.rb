@@ -1,10 +1,12 @@
 require_relative '../person'
 
-# rubocop:disable Lint/UselessAssignment
-
 describe Person do
   before :each do
-    @person = Person.new(6, 'Milu', parent_permission = true)
+    @person = Person.new(6, 'Milu', true)
+  end
+
+  it 'Return a Person object' do
+    expect(@person.class) == Person
   end
 
   it 'Should be return name Milu' do
@@ -18,6 +20,8 @@ describe Person do
   it 'Should be return parent permission true' do
     expect(@person.parent_permission).to eql true
   end
-end
 
-# rubocop:enable Lint/UselessAssignment
+  it 'checks the availability of Book class method/s' do
+    expect(Person.instance_methods(false).include?(:add_rental)).to eq true
+  end
+end

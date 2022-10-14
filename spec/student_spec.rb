@@ -1,12 +1,11 @@
 require_relative '../student'
 
-# rubocop:disable Lint/UselessAssignment
-
 describe Student do
   before(:each) do
-    @student = Student.new('student', 5, 'Tiwa', parent_permission = false)
+    @student = Student.new('student', 5, 'Tiwa', false)
   end
 
+  
   it 'Should be create a student name' do
     expect(@student.name).to eq 'Tiwa'
   end
@@ -19,8 +18,10 @@ describe Student do
   end
 
   it 'Should be create a student check student parent permission' do
-    expect(@student.parent_permission).to eql false
+    expect(@student.parent_permission).to eq false
+  end
+
+  it 'should say "¯\(ツ)/¯" when we call the play_hooky method' do
+    expect(@student.play_hooky).to eql "¯\(ツ)/¯"
   end
 end
-
-# rubocop:enable Lint/UselessAssignment
