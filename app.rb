@@ -30,7 +30,6 @@ class App
       save_files
     else
       puts 'Please enter a number between 1 and 7'
-      menu.menu
     end
   end
 
@@ -47,13 +46,11 @@ class App
     user_choice = 0
     menu = Select.new
     print 'Welcome To School Library App'
-    # while user_choice != 7
-    #   menu.menu
-    #   user_choice = gets.chomp.to_i
-    #   options(user_choice)
-    # end
-    menu.menu
-    
+    while user_choice != 7
+      menu.menu
+      user_choice = gets.chomp.to_i
+      options(user_choice)
+    end
   end
 end
 

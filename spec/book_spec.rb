@@ -20,5 +20,4 @@ describe Book do
   it 'checks the availability of Book class method/s' do
     expect(Book.instance_methods(false).include?(:add_rental)).to eq true
   end
-
 end

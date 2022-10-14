@@ -5,7 +5,6 @@ describe Student do
     @student = Student.new('student', 5, 'Tiwa', false)
   end
 
-  
   it 'Should be create a student name' do
     expect(@student.name).to eq 'Tiwa'
   end
